@@ -38,7 +38,7 @@ public class MainActivity extends FragmentActivity {
 			public void onClick(View v) {
 				mManager.setShouldWaitTransitionsToFinish(checkBoxWait.isChecked());
 				
-				ControllerEt controller = new ControllerEt(MainActivity.this, R.layout.fragmentmy_layout);
+				ControllerEt controller = new ControllerEt(MainActivity.this, R.layout.controller_layout);
 				controller.setAnimationIn(AnimationUtils.loadAnimation(MainActivity.this, R.anim.in_from_right));
 				controller.setAnimationOut(AnimationUtils.loadAnimation(MainActivity.this, R.anim.out_to_right));
 				boolean isPushPossible = mManager.push(controller, true);
@@ -59,7 +59,7 @@ public class MainActivity extends FragmentActivity {
 		mManager = new ControllerManager(parent);
 		mManager.setShouldWaitTransitionsToFinish(true);
 		
-		ControllerEt controller = new ControllerEt(this, R.layout.fragmentmy_layout, parent);
+		ControllerEt controller = new ControllerEt(this, R.layout.controller_layout, parent);
 		controller.setAnimationIn(AnimationUtils.loadAnimation(this, R.anim.in_from_right));
 		controller.setAnimationOut(AnimationUtils.loadAnimation(this, R.anim.out_to_right));
 		mManager.push(controller, true);

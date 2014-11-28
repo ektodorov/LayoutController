@@ -3,12 +3,7 @@ package com.blogspot.techzealous.testlayoutcontroller.controlleret;
 import java.util.ArrayList;
 
 import android.os.Handler;
-import android.util.Log;
-import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
-
-import com.example.testfragment.R;
 
 
 public class ControllerManager implements ControllerManagerInterface, OnControllerLifecycleListener {
@@ -75,9 +70,6 @@ public class ControllerManager implements ControllerManagerInterface, OnControll
 					
 //					if(mArrayControllers.size() > 1) {
 //						ControllerInterface controller = mArrayControllers.get(mArrayControllers.size() - 2);
-//						View view = controller.getLayout();
-//						TextView textView = (TextView)view.findViewById(R.id.textViewFragmentMy);
-//						Log.i("ControllerManager", "controller=" + textView.getText().toString());
 //						controller.detach(false);
 //					}
 					
@@ -88,9 +80,6 @@ public class ControllerManager implements ControllerManagerInterface, OnControll
 							public void run() {
 								int idxLast = mArrayControllers.indexOf(constController);
 								ControllerInterface controller = mArrayControllers.get(idxLast - 1);
-								View view = controller.getLayout();
-								TextView textView = (TextView)view.findViewById(R.id.textViewFragmentMy);
-								Log.i("ControllerManager", "Controller=" + textView.getText().toString());
 								controller.detach(false);
 							}
 						});
