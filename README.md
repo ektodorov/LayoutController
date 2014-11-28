@@ -16,4 +16,5 @@ How to use Layout Controller
 <p>Quick introduction of basic principles</p>
 You should use one ControllerManager instance for each view hierarchy you want to manage. Each ControllerManager needs a view placeholder (a parent view) that you place in your layout, to which childs will be added and removed with push and pop mehtods.<br>
 For instance in the device image the green and blue regions represent parent views. For each of them we should use a separate ControllerManager.
+<br><br>
 <img src="device.png"></img>
