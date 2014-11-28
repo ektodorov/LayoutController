@@ -12,6 +12,10 @@ public interface ControllerManagerInterface {
 	public void push(ControllerInterface aController, boolean aAnimated);
 	public void pop(boolean aAnimated);
 	
+	public void setShouldWaitTransitionsToFinish(boolean aShouldWait);
+	public boolean getShouldWaitTransitionsToFinish();
+	public boolean getIsTransitionFinished();
+	
 	public int getControllersCount();
 	public ControllerInterface getController(int aIndex);
 	public ArrayList<ControllerInterface> getControllers();
