@@ -6,21 +6,66 @@ import android.view.ViewGroup;
 
 public interface ControllerManagerInterface {
 	
+	/** Sets the parent view which to use for this ContrllerManager. 
+	 * Each ControllerManager should be used with only parent view. If we have more than one parent view to which we want to add child views we
+	 * should use separate ControllerManager which to control the view hierarchy for each parent view.
+	 */
 	public void setParentView(ViewGroup aParentView);
+	
+	/** Gets the parent view which this ControllerManager uses. */
 	public ViewGroup getParentView();
 
+	/** Adds (pushes) a new view to the stack of child views of the parent view this ControllerManager manages.
+	 * @param ControllerInterface aController - controller containing the view we are adding.
+	 * @param boolean aAnimated - indicates if the transition should be animated.
+	 */
 	public void push(ControllerInterface aController, boolean aAnimated);
+	
+	/** Removes (pops) the top most child view from the stack of child views of the parent view this ControllerManager manages.
+	 * @param boolean aAnimated - indicates if the transition should be animated. */
 	public void pop(boolean aAnimated);
 	
+	/** Sets if the ControllerManager should wait for the transitions when performing push, pop (adding, removing) child views should complete,
+	 * before allowing a new push, pop (addition, removal) to be possible.
+	 * Push, pop (additions, removals) can be put on a queue, or not. It is up to you which suites you best.
+	 * @param boolean aShouldWait - indicates if the ControllerManager should wait for transitions to complete.
+	 */
 	public void setShouldWaitTransitionsToFinish(boolean aShouldWait);
 	public boolean getShouldWaitTransitionsToFinish();
+	
+	/** Gets if the transition of push, pop (adding, removing) a child view to the parent view has completed. */
 	public boolean getIsTransitionFinished();
 	
+	/** Gets the count of ControllerInterface layout controllers that this ControllerManager has on it's stack */
 	public int getControllersCount();
+	
+	/** Gets a ControllerInterface layout controller from the stack of this ControllerManager.
+	 * @param int aIndex - the index of the ControllerInterface layout controller in the stack.
+	 * @return ControllerInterface - layout controller from the stack of this ControllerManager
+	 */
 	public ControllerInterface getController(int aIndex);
+	
+	/** Gets the stack of ControllerInterface layout controllers, that this ControllerManager manages. */
 	public ArrayList<ControllerInterface> getControllers();
 	
+	/** Adds a ControllerInterface layout controller to the stack of this ControllerManager.
+	 * This is not meant to be used to add on the top of the stack, we have push for that. This method is available if we want to
+	 * change the ControllerInterface layout controllers that are not visible, below the top controller.
+	 * @param int aIndex - at which index of the stack to add a controller
+	 */
 	public void add(ControllerInterface aController, int aIndex);
+	
+	/** Removes a ControllerInterface layout controller from the stack of this ControllerManager.
+	 * This is not meant to be used to remove of the top of the stack, we have pop for that. This method is available if we want to
+	 * change the ControllerInterface layout controllers that are not visible, below the top controller.
+	 * @param int aIndex - at which index of the stack to remove a controller
+	 */
 	public void remove(int aIndex);
+	
+	/** Removes a ControllerInterface layout controller from the stack of this ControllerManager.
+	 * This is not meant to be used to remove of the top of the stack, we have pop for that. This method is available if we want to
+	 * change the ControllerInterface layout controllers that are not visible, below the top controller.
+	 * @param ControllerInterface aController - which controller to remove
+	 */
 	public void remove(ControllerInterface aController);
 }

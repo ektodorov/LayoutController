@@ -12,7 +12,7 @@ import com.example.testfragment.R;
 
 
 public class ControllerManager implements ControllerManagerInterface, OnControllerLifecycleListener {
-
+	
 	private ArrayList<ControllerInterface> mArrayControllers;
 	private ViewGroup mParentView;
 	private Handler mHandler;

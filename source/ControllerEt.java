@@ -13,6 +13,7 @@ import android.view.animation.Animation.AnimationListener;
 public class ControllerEt implements ControllerInterface {
 
 	private static final String LOG = "ControllerEt";
+	
 	private ViewGroup mParentView;
 	private View mViewLayout;
 	private LayoutInflater mInflater;
@@ -91,7 +92,7 @@ public class ControllerEt implements ControllerInterface {
 	{
 		ViewParent viewParent = mViewLayout.getParent();
 		if(viewParent != null) {
-			Log.e(LOG, "attach(boolean aAnimated) failed the view already has a parent - " + viewParent);
+			Log.e(LOG, "attach(boolean aAnimated) FAILED, the view already has a parent - " + viewParent);
 			return;
 		}
 		
@@ -110,7 +111,7 @@ public class ControllerEt implements ControllerInterface {
 	{
 		ViewParent viewParent = mViewLayout.getParent();
 		if(viewParent != null) {
-			Log.e(LOG, "attach(ViewGroup aParentView, boolean aAnimated) failed the view already has a parent - " + viewParent);
+			Log.e(LOG, "attach(ViewGroup aParentView, boolean aAnimated) FAILED, the view already has a parent - " + viewParent);
 			return;
 		}
 		
@@ -159,7 +160,7 @@ public class ControllerEt implements ControllerInterface {
 	{
 		ViewParent viewParent = mViewLayout.getParent();
 		if(viewParent != null) {
-			Log.e(LOG, "attach(ViewGroup aParentView, boolean aAnimated, int aAtIndex) failed the view already has a parent - " + viewParent);
+			Log.e(LOG, "attach(ViewGroup aParentView, boolean aAnimated, int aAtIndex) FAILED, the view already has a parent - " + viewParent);
 			return;
 		}
 		
