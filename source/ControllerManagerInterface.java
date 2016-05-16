@@ -1,8 +1,8 @@
 package com.blogspot.techzealous.testlayoutcontroller.controlleret;
 
-import java.util.ArrayList;
-
 import android.view.ViewGroup;
+
+import java.util.ArrayList;
 
 public interface ControllerManagerInterface {
 	
@@ -16,8 +16,8 @@ public interface ControllerManagerInterface {
 	public ViewGroup getParentView();
 
 	/** Adds (pushes) a new view to the stack of child views of the parent view this ControllerManager manages.
-	 * @param ControllerInterface aController - controller containing the view we are adding.
-	 * @param boolean aAnimated - indicates if the transition should be animated.
+	 * @param aController ControllerInterface - controller containing the view we are adding.
+	 * @param aAnimated boolean - indicates if the transition should be animated.
 	 * @return boolean - if the ControllerInterface's view can be added to the parent view.
 	 * 		If we have set the ControllerManager to wait for transitions to finish it won't add a new child view until the previous
 	 * 		transition has finished. In this case the push method will return false, which means we have to wait for the transition to finish and then
@@ -26,7 +26,7 @@ public interface ControllerManagerInterface {
 	public boolean push(ControllerInterface aController, boolean aAnimated);
 	
 	/** Removes (pops) the top most child view from the stack of child views of the parent view this ControllerManager manages.
-	 * @param boolean aAnimated - indicates if the transition should be animated.
+	 * @param aAnimated boolean - indicates if the transition should be animated.
 	 * @return boolean - if the ControllerInterface's view can be removed from the parent view.
 	 * 		If we have set the ControllerManager to wait for transitions to finish it won't remove a child view until the previous
 	 * 		transition has finished. In this case the pop method will return false, which means we have to wait for the transition to finish and then
@@ -37,7 +37,7 @@ public interface ControllerManagerInterface {
 	/** Sets if the ControllerManager should wait for the transitions when performing push, pop (adding, removing) child views should complete,
 	 * before allowing a new push, pop (addition, removal) to be possible.
 	 * Push, pop (additions, removals) can be put on a queue, or not. It is up to you which suites you best.
-	 * @param boolean aShouldWait - indicates if the ControllerManager should wait for transitions to complete.
+	 * @param aShouldWait boolean - indicates if the ControllerManager should wait for transitions to complete.
 	 */
 	public void setShouldWaitTransitionsToFinish(boolean aShouldWait);
 	public boolean getShouldWaitTransitionsToFinish();
@@ -49,7 +49,7 @@ public interface ControllerManagerInterface {
 	public int getControllersCount();
 	
 	/** Gets a ControllerInterface layout controller from the stack of this ControllerManager.
-	 * @param int aIndex - the index of the ControllerInterface layout controller in the stack.
+	 * @param aIndex int - the index of the ControllerInterface layout controller in the stack.
 	 * @return ControllerInterface - layout controller from the stack of this ControllerManager
 	 */
 	public ControllerInterface getController(int aIndex);
@@ -60,21 +60,21 @@ public interface ControllerManagerInterface {
 	/** Adds a ControllerInterface layout controller to the stack of this ControllerManager.
 	 * This is not meant to be used to add on the top of the stack, we have push for that. This method is available if we want to
 	 * change the ControllerInterface layout controllers that are not visible, below the top controller.
-	 * @param int aIndex - at which index of the stack to add a controller
+	 * @param aIndex int - at which index of the stack to add a controller
 	 */
 	public void add(ControllerInterface aController, int aIndex);
 	
 	/** Removes a ControllerInterface layout controller from the stack of this ControllerManager.
 	 * This is not meant to be used to remove of the top of the stack, we have pop for that. This method is available if we want to
 	 * change the ControllerInterface layout controllers that are not visible, below the top controller.
-	 * @param int aIndex - at which index of the stack to remove a controller
+	 * @param aIndex int - at which index of the stack to remove a controller
 	 */
 	public void remove(int aIndex);
 	
 	/** Removes a ControllerInterface layout controller from the stack of this ControllerManager.
 	 * This is not meant to be used to remove of the top of the stack, we have pop for that. This method is available if we want to
 	 * change the ControllerInterface layout controllers that are not visible, below the top controller.
-	 * @param ControllerInterface aController - which controller to remove
+	 * @param aController ControllerInterface - which controller to remove
 	 */
 	public void remove(ControllerInterface aController);
 }

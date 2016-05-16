@@ -29,47 +29,47 @@ public interface ControllerInterface {
 	public void setAnimationOut(Animation aAnimation);
 	
 	/** Attach the Controller's view to the parent view
-	 * @param boolean aAnimated - play animation when attaching the view. 
+	 * @param aAnimated boolean - play animation when attaching the view.
 	 * 		The animation will be the one set with setAnimationIn(Animation aAnimation);
 	 */
 	public void attach(boolean aAnimated);
 	
 	/** Attach the Controller's view to the parent view
-	 * @param ViewGroup aParentView - parent view to which to attach the Controller's view
-	 * @param boolean aAnimated - play animation when attaching the view. 
+	 * @param aParentView ViewGroup - parent view to which to attach the Controller's view
+	 * @param aAnimated boolean - play animation when attaching the view.
 	 * 		The animation will be the one set with setAnimationIn(Animation aAnimation);
 	 */
 	public void attach(ViewGroup aParentView, boolean aAnimated);
 	
 	/** Attach the Controller's view to the parent view
-	 * @param ViewGroup aParentView - parent view to which to attach the Controller's view
-	 * @param int aViewResource - view resource which to use as the Controller's view.
+	 * @param aParentView ViewGroup - parent view to which to attach the Controller's view
+	 * @param aViewResource int - view resource which to use as the Controller's view.
 	 * 		It will be set as the Controller's view and also used when detaching.
-	 * @param boolean aAnimated - play animation when attaching the view. 
+	 * @param aAnimated boolean - play animation when attaching the view.
 	 * 		The animation will be the one set with setAnimationIn(Animation aAnimation);
 	 */
 	public void attach(ViewGroup aParentView, int aViewResource, boolean aAnimated);
 	
 	/** Attach the Controller's view to the parent view
-	 * @param ViewGroup aParentView - parent view to which to attach the Controller's view
-	 * @param int aViewResource - view resource which to use as the Controller's view.
+	 * @param aParentView ViewGroup - parent view to which to attach the Controller's view
+	 * @param aViewResource int - view resource which to use as the Controller's view.
 	 * 		It will be set as the Controller's view and also used when detaching.
-	 * @param Context aCtx - context which to use with the Controller
-	 * @param boolean aAnimated - play animation when attaching the view. 
+	 * @param aCtx Context - context which to use with the Controller
+	 * @param aAnimated boolean - play animation when attaching the view.
 	 * 		The animation will be the one set with setAnimationIn(Animation aAnimation);
 	 */
 	public void attach(ViewGroup aParentView, int aViewResource, Context aCtx, boolean aAnimated);
 	
 	/** Attach the Controller's view to the parent view
-	 * @param ViewGroup aParentView - parent view to which to attach the Controller's view
-	 * @param boolean aAnimated - play animation when attaching the view. 
+	 * @param aParentView ViewGroup - parent view to which to attach the Controller's view
+	 * @param aAnimated boolean - play animation when attaching the view.
 	 * 		The animation will be the one set with setAnimationIn(Animation aAnimation);
-	 * @param int aAtIndex - index of the parents child views at which to add the Controller's view.
+	 * @param aAtIndex int - index of the parents child views at which to add the Controller's view.
 	 */
 	public void attach(ViewGroup aParentView, boolean aAnimated, int aAtIndex);
 	
 	/** Detach the Controller's view from the parent view
-	 * @param boolean aAnimated - play animation whne detaching the view.
+	 * @param aAnimated boolean - play animation whne detaching the view.
 	 * 		The animation will be the one set with setAnimationOut(Animation aAnimation);
 	 */
 	public void detach(boolean aAnimated);
