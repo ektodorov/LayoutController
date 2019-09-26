@@ -94,6 +94,7 @@ public class MainActivity extends FragmentActivity {
 		if(mManager.getControllersCount() > 0) {
 			mManager.setShouldWaitTransitionsToFinish(checkBoxWait.isChecked());
 			mManager.pop(true);
+			mCount--;
 		} else {
 			super.onBackPressed();
 		}

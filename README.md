@@ -18,3 +18,5 @@ You should use one ControllerManager instance for each view hierarchy you want t
 For instance in the device image the green and blue regions represent parent views. For each of them we should use a separate ControllerManager.
 <br><br>
 <img src="device.png"></img>
+<br/>
+<a href="https://youtu.be/Pg8CFBIN7Q4">Video<a/>
